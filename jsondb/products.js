@@ -62,7 +62,7 @@ const jsondb = {
       category: "dessert",
       price: 3.99,
       url: "dessert",
-      picture: "/pictures/products/dessert1.png",
+      picture: "/pictures/products/dessert1.jpg",
     },
     {
       name: "Brownie",
@@ -70,7 +70,7 @@ const jsondb = {
       category: "dessert",
       price: 2.99,
       url: "dessert",
-      picture: "/pictures/products/dessert2.png",
+      picture: "/pictures/products/dessert2.jpg",
     },
     {
       name: "Muffin",
@@ -78,7 +78,7 @@ const jsondb = {
       category: "dessert",
       price: 2.99,
       url: "dessert",
-      picture: "/pictures/products/dessert2.png",
+      picture: "/pictures/products/dessert3.jpg",
     },
   ],
 };
