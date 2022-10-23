@@ -1,7 +1,11 @@
+import ProductList from "../components/Productlist";
+import Slider from "../components/Slider";
+
 export default function Home() {
   return (
     <div>
-      <h1>Essen</h1>
+      <Slider />
+      <ProductList />
     </div>
   );
 }
