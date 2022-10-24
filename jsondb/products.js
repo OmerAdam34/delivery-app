@@ -5,7 +5,7 @@ const jsondb = {
       description: "Tomato sauce, cheese, salami",
       category: "Main menu",
       price: 6.99,
-      url: "pizza",
+      url: "pizza salami",
       picture: "/pictures/products/pizza1.jpg",
     },
     {
@@ -13,7 +13,7 @@ const jsondb = {
       description: "Tomato sauce, cheese, ham",
       category: "Main menu",
       price: 7.99,
-      url: "pizza",
+      url: "pizza prosciutto",
       picture: "/pictures/products/pizza2.jpg",
     },
     {
@@ -21,15 +21,15 @@ const jsondb = {
       description: "Tomato sauce, cheese, Mushrooms",
       category: "Main menu",
       price: 8.99,
-      url: "pizza",
+      url: "pizza mushrooms",
       picture: "/pictures/products/pizza3.jpg",
     },
     {
-      name: "Mushrooms",
+      name: "Veggies",
       description: "Tomato sauce, cheese, Mushrooms",
       category: "Main menu",
       price: 8.99,
-      url: "pizza",
+      url: "pizza veggies",
       picture: "/pictures/products/pizza4.jpg",
     },
     {
@@ -37,7 +37,7 @@ const jsondb = {
       description: "Tomato sauce, cheese, ham, olives",
       category: "Main menu",
       price: 8.99,
-      url: "pizza",
+      url: "pizza beef",
       picture: "/pictures/products/pizza5.jpg",
     },
     {
@@ -45,7 +45,7 @@ const jsondb = {
       description: "Tomato sauce, cheese, chicken, olives, red peppers",
       category: "Main menu",
       price: 8.99,
-      url: "pizza",
+      url: "pizza italia",
       picture: "/pictures/products/pizza8.jpg",
     },
     {
