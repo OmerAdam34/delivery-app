@@ -6,19 +6,19 @@ export default function ProductList() {
   return (
     <div>
       <div className="row row-cols-3">
-        {jsondb.products.map((products) => (
-          <div key={products.name} className="mt-3 col">
+        {jsondb.products.map((product) => (
+          <div key={product.name} className="mt-3 col">
             <Card>
-              <Link href={`/products/)${products.url}`} passHref>
+              <Link href={`/products/${product.url}`} passHref>
                 <a>
-                  <Card.Img variant="top" src={products.picture} />
+                  <Card.Img variant="top" src={product.picture} />
                 </a>
               </Link>
               <Card.Body>
                 <Card.Title>
-                  {products.name} {products.price}€
+                  {product.name} {product.price}€
                 </Card.Title>
-                <Card.Text>{products.description}</Card.Text>
+                <Card.Text>{product.description}</Card.Text>
                 <Button variant="danger">add to card</Button>
               </Card.Body>
             </Card>
