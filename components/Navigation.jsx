@@ -16,7 +16,7 @@ export default function Navigation() {
             />
           </a>
         </Link>
-        <Link href="/warenkorb">
+        <Link href="/shoppingCart">
           <a>
             <Image
               src={"/pictures/warenkorb.png"}
