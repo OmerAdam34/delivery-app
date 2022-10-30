@@ -1,4 +1,4 @@
-import mongoose, { mongo } from "mongoose";
+import mongoose from "mongoose";
 
 let cached = global.mongoose;
 
@@ -8,7 +8,7 @@ if (!cached) {
 
 async function dbConnect() {
   if (cached.con) {
-    console.log("DB connection is active");
+    console.log("DB Verbindung aktiv");
     return cached.con;
   }
 
@@ -20,9 +20,9 @@ async function dbConnect() {
     };
 
     cached.promise = mongoose
-      .connect(process.env.MONGO_URI, options)
+      .connect(process.env.MONGODB_URI, options)
       .then((mongoose) => {
-        console.log("DB connection start");
+        console.log("DB Verbindung gestartet");
         return mongoose;
       });
   }
@@ -32,7 +32,7 @@ async function dbConnect() {
 
 async function dbDisconnect() {
   await mongoose.disconnect();
-  console.log("DB connection end");
+  console.log("DB Verbindung beendet");
 }
 
 const mongodb = { dbConnect, dbDisconnect };
