@@ -1,10 +1,16 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 
-import { mongo } from "mongoose";
 import mongodb from "../../utils/mongodb";
+import jsondb from "../../jsondb/products";
+import Product from "../../models/Product";
+// import { mongo } from "mongoose";
 
-export default function handler(req, res) {
-  mongodb.dbConnect();
-  mongodb.dbDisconnect();
-  res.status(200).json({ name: "John Doe" });
+export default async function handler(req, res) {
+  await mongodb.dbConnect();
+
+  await Product.deleteMany();
+  await Product.insertMany(jsondb.products);
+
+  await mongodb.dbDisconnect();
+  res.send({ text: "Data saved" });
 }
