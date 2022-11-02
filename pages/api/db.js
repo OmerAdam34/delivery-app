@@ -10,7 +10,8 @@ export default async function handler(req, res) {
 
   await Product.deleteMany();
   await Product.insertMany(jsondb.products);
+  const products = await Product.find({});
 
   await mongodb.dbDisconnect();
-  res.send({ text: "Data saved" });
+  res.send(products);
 }

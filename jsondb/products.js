@@ -5,7 +5,7 @@ const jsondb = {
       description: "Tomato sauce, cheese, salami",
       category: "Main menu",
       price: 6.99,
-      url: "pizza salami",
+      url: "salami",
       picture: "/pictures/products/pizza1.jpg",
       extras: [
         {
@@ -23,7 +23,7 @@ const jsondb = {
       description: "Tomato sauce, cheese, ham",
       category: "Main menu",
       price: 7.99,
-      url: "pizza prosciutto",
+      url: "prosciutto",
       picture: "/pictures/products/pizza2.jpg",
       extras: [
         {
@@ -41,7 +41,7 @@ const jsondb = {
       description: "Tomato sauce, cheese, Mushrooms",
       category: "Main menu",
       price: 8.99,
-      url: "pizza mushrooms",
+      url: "mushrooms",
       picture: "/pictures/products/pizza3.jpg",
       extras: [
         {
@@ -60,7 +60,7 @@ const jsondb = {
       description: "Tomato sauce, cheese, Mushrooms",
       category: "Main menu",
       price: 8.99,
-      url: "pizza veggies",
+      url: "veggies",
       picture: "/pictures/products/pizza4.jpg",
       extras: [
         {
@@ -78,7 +78,7 @@ const jsondb = {
       description: "Tomato sauce, cheese, ham, olives",
       category: "Main menu",
       price: 8.99,
-      url: "pizza beef",
+      url: "beef",
       picture: "/pictures/products/pizza5.jpg",
       extras: [
         {
@@ -96,7 +96,7 @@ const jsondb = {
       description: "Tomato sauce, cheese, chicken, olives, red peppers",
       category: "Main menu",
       price: 8.99,
-      url: "pizza italia",
+      url: "italia",
       picture: "/pictures/products/pizza8.jpg",
       extras: [
         {
@@ -150,7 +150,7 @@ const jsondb = {
       description: "Brownie chocolate",
       category: "dessert",
       price: 2.99,
-      url: "dessert",
+      url: "brownie",
       picture: "/pictures/products/dessert2.jpg",
       extras: [
         {
@@ -168,7 +168,7 @@ const jsondb = {
       description: "Chocolate, white chocolate, raspberry",
       category: "dessert",
       price: 2.99,
-      url: "dessert",
+      url: "muffin",
       picture: "/pictures/products/dessert3.jpg",
       extras: [
         {
