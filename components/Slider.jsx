@@ -3,11 +3,11 @@ import Image from "next/image";
 
 export default function Slider() {
   return (
-    <div>
+    <div className="d-flex justify-content-center align-items-center">
       <Carousel controls={false} fade={true}>
         <Carousel.Item>
           <Image
-            ClassName="d-block w-100 rounded-3"
+            className="d-block w-100 rounded-3"
             src="/pictures/food/burger.png"
             alt="pizza"
             width={300}
@@ -16,7 +16,7 @@ export default function Slider() {
         </Carousel.Item>
         <Carousel.Item>
           <Image
-            ClassName="d-block w-100 rounded-3"
+            className="d-block w-100 rounded-3"
             src="/pictures/food/pizza.png"
             alt="pizza"
             width={300}
@@ -25,7 +25,7 @@ export default function Slider() {
         </Carousel.Item>
         <Carousel.Item>
           <Image
-            ClassName="d-block w-100 rounded-3"
+            className="d-block w-100 rounded-3"
             src="/pictures/food/chicken.png"
             alt="chicken"
             width={350}
