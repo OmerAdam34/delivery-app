@@ -7,7 +7,7 @@ export default function Home({ products }) {
   return (
     <div>
       <Slider />
-      <ProductList produkte={products} />
+      <ProductList products={products} />
     </div>
   );
 }
