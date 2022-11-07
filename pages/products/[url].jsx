@@ -1,18 +1,13 @@
-// import { useRouter } from "next/router";
-// import jsondb from "../../jsondb/products";
 import Link from "next/link";
 import Image from "next/image";
 import { ListGroup, Button, ListGroupItem } from "react-bootstrap";
 import mongodb from "../../utils/mongodb";
 import Product from "../../models/Product";
 
-export default function ProductPage() {
+export default function ProductPage({ product }) {
   const addExtra = (event, extra) => {
     alert(extra.text + " für " + extra.price);
   };
-  // const router = useRouter();
-  // const { url } = router.query;
-  // const product = jsondb.products.find((a) => a.url === url);
 
   if (!product) {
     return (
