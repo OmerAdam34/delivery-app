@@ -7,6 +7,9 @@ import mongodb from "../../utils/mongodb";
 import Product from "../../models/Product";
 
 export default function ProductPage() {
+  const addExtra = (event, extra) => {
+    alert(extra.text + " für " + extra.price);
+  };
   // const router = useRouter();
   // const { url } = router.query;
   // const product = jsondb.products.find((a) => a.url === url);
@@ -46,9 +49,14 @@ export default function ProductPage() {
             <ListGroupItem>
               {product.extras.length ? "Extras" : <p></p>}
               {product.extras.map((extra) => (
-                <span key={extra.name}>
+                <span key={extra._id}>
                   {extra.text}
-                  <input className="form-check-input me-2" type="checkbox" />
+                  <input
+                    className="form-check-input me-2"
+                    type="checkbox"
+                    id={extra.text}
+                    onChange={(event) => addExtra(event, extra)}
+                  />
                 </span>
               ))}
             </ListGroupItem>
