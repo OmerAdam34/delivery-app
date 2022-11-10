@@ -42,7 +42,7 @@ export default function ProductPage({ product }) {
             </ListGroupItem>
             <ListGroupItem>{product.description}</ListGroupItem>
             <ListGroupItem>
-              {product.extras.length ? "Extras" : <p></p>}
+              {product.extras.length ? "Extras: " : <p></p>}
               {product.extras.map((extra) => (
                 <span key={extra._id}>
                   {extra.text}
