@@ -3,11 +3,25 @@ import Image from "next/image";
 import { ListGroup, Button, ListGroupItem } from "react-bootstrap";
 import mongodb from "../../utils/mongodb";
 import Product from "../../models/Product";
+import { useState } from "react";
 
 export default function ProductPage({ product }) {
+  const [price, setPrice] = useState(product.price);
+  const [extras, setExtras] = useState([]);
+  const [quantity, setQuantity] = useState(1);
+
   const addExtra = (event, extra) => {
-    alert(extra.text + " für " + extra.price);
+    const checked = event.target.checked;
+    if (checked) {
+      setPrice(price + extra.price);
+      setExtras([...extras, extra]);
+    } else {
+      setPrice(price - extra.price);
+      setExtras(extras.filter((allExtras) => allExtras._id !== extra._id));
+    }
   };
+
+  console.log(extras);
 
   if (!product) {
     return (
@@ -38,7 +52,7 @@ export default function ProductPage({ product }) {
           <h1>{product.name}</h1>
           <ListGroup variant="flush">
             <ListGroupItem>
-              <h2 className="text-danger">{product.price} €</h2>
+              <h2 className="text-danger">{price.toFixed(2)} €</h2>
             </ListGroupItem>
             <ListGroupItem>{product.description}</ListGroupItem>
             <ListGroupItem>
@@ -59,8 +73,10 @@ export default function ProductPage({ product }) {
               <input
                 className="form-control w-50"
                 type="number"
-                placeholder="1"
+                value={quantity}
                 min="1"
+                max="100"
+                onChange={(event) => setQuantity(event.target.value)}
               ></input>
             </ListGroupItem>
             <ListGroupItem className="row">

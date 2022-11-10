@@ -158,7 +158,7 @@ const jsondb = {
           price: 4,
         },
         {
-          text: "vanilla icecream",
+          text: "vanilla ice cream",
           price: 0.5,
         },
       ],
