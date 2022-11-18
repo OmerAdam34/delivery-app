@@ -7,6 +7,9 @@ import { useDispatch, useSelector } from "react-redux";
 export default function ShoppingCart() {
   const dispatch = useDispatch();
   const shoppingCart = useSelector((state) => state.shoppingCart);
+
+  const entfernen = (product) => {};
+
   return (
     <div>
       <h1>Warenkorb</h1>
@@ -36,15 +39,25 @@ export default function ShoppingCart() {
                       height={50}
                     />
                   </td>
-                  <Link href={`/products/${product.url}`}>
-                    <a className="text-danger">{product.name}</a>
-                  </Link>
-                  <td>Beer</td>
-                  <td>double</td>
-                  <td>1</td>
-                  <td>1.99</td>
                   <td>
-                    <Button className="btn-sm">x</Button>
+                    <Link href={`/products/${product.url}`}>
+                      <a className="text-danger">{product.name}</a>
+                    </Link>
+                  </td>
+                  <td>
+                    {product.extras.map((extra) => (
+                      <span key={extra._id}>{extra.text}</span>
+                    ))}
+                  </td>
+                  <td>{product.quantity}</td>
+                  <td>{(product.price * product.quantity).toFixed(2)}</td>
+                  <td>
+                    <Button
+                      className="btn-sm"
+                      onClick={() => entfernen(product)}
+                    >
+                      x
+                    </Button>
                   </td>
                 </tr>
               ))}
@@ -56,7 +69,7 @@ export default function ShoppingCart() {
             <Card>
               <CardHeader as="h5">Total</CardHeader>
               <Card.Body className="text-center">
-                <Card.Title>6.95 EUR</Card.Title>
+                <Card.Title>{shoppingCart.amount.toFixed(2)}</Card.Title>
                 <Button variant="primary">To Checkout</Button>
               </Card.Body>
             </Card>
