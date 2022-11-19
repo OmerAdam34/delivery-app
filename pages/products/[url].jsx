@@ -6,12 +6,15 @@ import Product from "../../models/Product";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { addProducts } from "../../redux/warenkorbSlice";
+import { v4 as uuidv4 } from "uuid";
+import { useRouter } from "next/router";
 
 export default function ProductPage({ product }) {
   const [price, setPrice] = useState(product.price);
   const [extras, setExtras] = useState([]);
   const [quantity, setQuantity] = useState(1);
   const dispatch = useDispatch();
+  const router = useRouter();
 
   const addExtra = (event, extra) => {
     const checked = event.target.checked;
@@ -25,7 +28,9 @@ export default function ProductPage({ product }) {
   };
 
   const addCard = () => {
-    dispatch(addProducts({ ...product, extras, price, quantity }));
+    const _id = uuidv4();
+    dispatch(addProducts({ ...product, extras, price, quantity, _id }));
+    router.push("/shoppingCart");
   };
 
   if (!product) {
