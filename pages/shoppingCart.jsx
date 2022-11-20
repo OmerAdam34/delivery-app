@@ -1,13 +1,12 @@
 import { Table, CloseButton, Button, Card } from "react-bootstrap";
 import Image from "next/image";
-import Link from "next/link";
-import CardHeader from "react-bootstrap/esm/CardHeader";
 import { useDispatch, useSelector } from "react-redux";
+import Link from "next/link";
 import { deleteProduct } from "../redux/warenkorbSlice";
 
 export default function ShoppingCart() {
   const dispatch = useDispatch();
-  const shoppingCart = useSelector((state) => state.shoppingCart);
+  const warenkorb = useSelector((state) => state.warenkorb);
 
   const entfernen = (product) => {
     dispatch(deleteProduct(product));
@@ -15,8 +14,8 @@ export default function ShoppingCart() {
 
   return (
     <div>
-      {shoppingCart.quantity === 0 ? (
-        <h2>Der Warenkorb ist leer</h2>
+      {warenkorb.quantity === 0 ? (
+        <h2>Der Warenkorb ist leer!</h2>
       ) : (
         <div>
           <h1>Warenkorb</h1>
@@ -25,18 +24,18 @@ export default function ShoppingCart() {
               <Table hover responsive>
                 <thead>
                   <tr>
-                    <th>Picture</th>
+                    <th>Bild</th>
                     <th>Name</th>
                     <th>Extras</th>
-                    <th>Quantity</th>
-                    <th>Price</th>
+                    <th>Menge</th>
+                    <th>Betrag</th>
                     <th>
                       <CloseButton disabled />
                     </th>
                   </tr>
                 </thead>
                 <tbody>
-                  {shoppingCart.products.map((product) => (
+                  {warenkorb.products.map((product) => (
                     <tr key={product._id}>
                       <td>
                         <Image
@@ -53,11 +52,11 @@ export default function ShoppingCart() {
                       </td>
                       <td>
                         {product.extras.map((extra) => (
-                          <span key={extra._id}>{extra.text}</span>
+                          <span key={extra._id}>{extra.text} </span>
                         ))}
                       </td>
-                      <td>{product.quantity}</td>
-                      <td>{(product.price * product.quantity).toFixed(2)}</td>
+                      <td>{product.total}</td>
+                      <td>{(product.price * product.total).toFixed(2)}</td>
                       <td>
                         <Button
                           className="btn-sm"
@@ -72,12 +71,12 @@ export default function ShoppingCart() {
               </Table>
             </div>
             <div className="col-3 p-2">
-              <div>
+              <div className="shadow">
                 <Card>
-                  <CardHeader as="h5">Total</CardHeader>
+                  <Card.Header as="h5">Gesamt</Card.Header>
                   <Card.Body className="text-center">
-                    <Card.Title>{shoppingCart.amount.toFixed(2)}</Card.Title>
-                    <Button variant="primary">To Checkout</Button>
+                    <Card.Title>{warenkorb.amount.toFixed(2)}</Card.Title>
+                    <Button variant="primary">Zur Kasse</Button>
                   </Card.Body>
                 </Card>
               </div>
