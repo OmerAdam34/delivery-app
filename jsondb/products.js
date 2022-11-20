@@ -10,7 +10,7 @@ const jsondb = {
       extras: [
         {
           text: "double",
-          price: 4,
+          price: 4.0,
         },
         {
           text: "extra spicey",
@@ -28,7 +28,7 @@ const jsondb = {
       extras: [
         {
           text: "extra ham",
-          price: 2,
+          price: 2.0,
         },
         {
           text: "extra chilli",

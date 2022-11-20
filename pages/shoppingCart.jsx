@@ -56,7 +56,9 @@ export default function ShoppingCart() {
                         ))}
                       </td>
                       <td>{product.total}</td>
-                      <td>{(product.price * product.total).toFixed(2)}</td>
+                      <td>
+                        {Number(product.price * product.total).toFixed(2)}
+                      </td>
                       <td>
                         <Button
                           className="btn-sm"
@@ -75,7 +77,9 @@ export default function ShoppingCart() {
                 <Card>
                   <Card.Header as="h5">Gesamt</Card.Header>
                   <Card.Body className="text-center">
-                    <Card.Title>{warenkorb.amount.toFixed(2)}</Card.Title>
+                    <Card.Title>
+                      {Number(warenkorb.amount).toFixed(2)}
+                    </Card.Title>
                     <Button variant="primary">Zur Kasse</Button>
                   </Card.Body>
                 </Card>
