@@ -15,7 +15,7 @@ export default function ProductList({ products }) {
               </Link>
               <Card.Body>
                 <Card.Title>
-                  {product.name} {product.price.toFixed(2)}€
+                  {product.name} {Number(product.price).toFixed(2)}€
                 </Card.Title>
                 <Card.Text>{product.description}</Card.Text>
 

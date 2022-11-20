@@ -62,7 +62,7 @@ export default function ProductPage({ product }) {
           <h1>{product.name}</h1>
           <ListGroup variant="flush">
             <ListGroupItem>
-              <h2 className="text-danger">{price.toFixed(2)} €</h2>
+              <h2 className="text-danger">{Number(price).toFixed(2)} €</h2>
             </ListGroupItem>
             <ListGroupItem>{product.description}</ListGroupItem>
             <ListGroupItem>
