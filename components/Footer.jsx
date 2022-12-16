@@ -4,6 +4,7 @@ export default function Footer() {
       <h6>
         Pi Bro - so fresh ´n´ so clean | 012 555 12345 | Mo-So: 10:00-22:00{" "}
       </h6>
+      <a href="" className=""></a>
     </div>
   );
 }
